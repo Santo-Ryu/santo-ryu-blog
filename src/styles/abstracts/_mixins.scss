@@ -1,0 +1,50 @@
+@use '../abstracts/variables' as *;
+@use '../abstracts/functions' as *;
+@use 'sass:list';
+
+/* Responsive */
+@mixin respond($breakpoints...) {
+    @each $breakpoint in $breakpoints {
+        @if $breakpoint == sm {
+            @media (max-width: #{$breakpoint-sm - $epsilon}) {
+                @content;
+            }
+        } @else if $breakpoint == md {
+            @media (min-width: $breakpoint-sm) and (max-width: #{$breakpoint-md - $epsilon}) {
+                @content;
+            }
+        } @else if $breakpoint == lg {
+            @media (min-width: $breakpoint-md) and (max-width: #{$breakpoint-lg - $epsilon}) {
+                @content;
+            }
+        } @else if $breakpoint == xl {
+            @media (min-width: $breakpoint-xl) {
+                @content;
+            }
+        }
+    }
+}
+
+/* Spacing */
+@mixin spacing($top, $right: $top, $bottom: $top, $left: $right) {
+    padding: pxToRem($top) pxToRem($right) pxToRem($bottom) pxToRem($left);
+}
+
+/* Display */
+@mixin flex-layout($display: flex, $justify: center, $align: center, $direction: row, $gap: 0) {
+    display: $display;
+    justify-content: $justify;
+    align-items: $align;
+    flex-direction: $direction;
+    gap: $gap;
+}
+
+/* Mixin use font Inter with automatic optional weight */
+/// @param {Number} $weight - Value from 100 to 900
+@mixin font-base($family: 'Inter', $weight: 400, $spacing: 0, $style: normal) {
+  font-family: $family, sans-serif;
+  font-optical-sizing: auto;
+  font-weight: $weight;
+  letter-spacing: $spacing;
+  font-style: $style;
+}

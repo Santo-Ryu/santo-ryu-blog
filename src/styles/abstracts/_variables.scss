@@ -1,0 +1,179 @@
+@use '../abstracts/functions' as *;
+@use 'sass:color';
+
+/* ==========================================================================
+   COLORS
+   ========================================================================== */
+
+$color-primary: #7cff00;
+$color-primary-hover: #96ff3d;
+$color-primary-dark: #4aa300;
+
+$color-success: #00ff88;
+$color-warning: #ffc857;
+$color-danger: #ff4d4d;
+$color-info: #49c6ff;
+
+// Background
+$bg-page: #090909;
+$bg-main: #0d0d0d;
+$bg-surface: #111111;
+$bg-card: #131313;
+$bg-card-hover: #191919;
+$bg-code: #101010;
+
+// Border
+$border-color: #262626;
+$border-hover: #3d3d3d;
+$border-active: $color-primary;
+
+// Text
+$text-primary: #eeeeee;
+$text-secondary: #b3b3b3;
+$text-muted: #777777;
+$text-disabled: #555555;
+$text-accent: $color-primary;
+
+/* Overlay */
+$overlay-dark: rgba(0, 0, 0, 0.55);
+$overlay-light: rgba(255, 255, 255, 0.05);
+
+
+// ==========================================================================
+// TYPOGRAPHY
+// ==========================================================================
+
+$font-mono: "JetBrains Mono", "Fira Code", monospace;
+$font-sans: "Inter", sans-serif;
+
+$font-size-xs: 12px;
+$font-size-sm: 14px;
+$font-size-md: 16px;
+$font-size-lg: 20px;
+$font-size-xl: 28px;
+$font-size-2xl: 40px;
+
+$line-height: 1.7;
+
+$font-weight-normal: 400;
+$font-weight-medium: 500;
+$font-weight-bold: 700;
+
+
+// ==========================================================================
+// LAYOUT
+// ==========================================================================
+
+$container-width: 1400px;
+
+$navbar-height: 72px;
+
+$content-gap: 32px;
+$section-gap: 48px;
+
+$sidebar-width: 300px;
+
+$card-radius: 8px;
+$button-radius: 6px;
+$input-radius: 6px;
+
+
+// ==========================================================================
+// SPACING
+// ==========================================================================
+
+$space-1: 4px;
+$space-2: 8px;
+$space-3: 12px;
+$space-4: 16px;
+$space-5: 20px;
+$space-6: 24px;
+$space-7: 32px;
+$space-8: 40px;
+$space-9: 48px;
+$space-10: 64px;
+
+
+// ==========================================================================
+// SHADOW
+// ==========================================================================
+
+$shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.2);
+
+$shadow-md: 0 8px 20px rgba(0, 0, 0, 0.35);
+
+$shadow-lg: 0 15px 40px rgba(0, 0, 0, 0.45);
+
+$shadow-glow: 0 0 10px rgba(124, 255, 0, 0.25);
+
+$shadow-glow-strong: 0 0 18px rgba(124, 255, 0, 0.45);
+
+
+// ==========================================================================
+// TRANSITIONS
+// ==========================================================================
+
+$transition-fast: 0.15s ease;
+$transition-normal: 0.25s ease;
+$transition-slow: 0.4s ease;
+
+
+// ==========================================================================
+// Z-INDEX
+// ==========================================================================
+
+$z-dropdown: 100;
+$z-sticky: 200;
+$z-fixed: 500;
+$z-modal-backdrop: 900;
+$z-modal: 1000;
+$z-tooltip: 1100;
+
+
+// ==========================================================================
+// GRID
+// ==========================================================================
+
+$grid-gap: 24px;
+
+
+// ==========================================================================
+// COMPONENT
+// ==========================================================================
+
+$post-image-width: 260px;
+$post-image-height: 140px;
+
+$post-card-height: 160px;
+
+$avatar-size: 140px;
+
+$tag-height: 34px;
+
+$button-height: 42px;
+
+$input-height: 42px;
+
+
+// ==========================================================================
+// EFFECTS
+// ==========================================================================
+
+$grid-opacity: 0.05;
+
+$noise-opacity: 0.03;
+
+$scanline-opacity: 0.04;
+
+$blur-glass: 12px;
+
+
+// ==========================================================================
+// BREAKPOINTS
+// ==========================================================================
+
+$mobile: 576px;
+$tablet: 768px;
+$laptop: 1024px;
+$desktop: 1280px;
+$wide: 1440px;
