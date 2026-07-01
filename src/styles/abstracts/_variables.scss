@@ -1,86 +1,115 @@
-@use '../abstracts/functions' as *;
-@use 'sass:color';
+/* ===========================================================
+   TYPOGRAPHY
+=========================================================== */
+
+$font-primary: "Inter", sans-serif;
+$font-heading: "Inter", sans-serif;
+$font-code: "JetBrains Mono", monospace;
+
+/* ===========================================================
+   FONT SIZE
+=========================================================== */
+
+$fs-xxs: 0.75rem; //12
+$fs-xs: 0.875rem; //14
+$fs-sm: 1rem; //16
+$fs-md: 1.125rem; //18
+$fs-lg: 1.25rem; //20
+$fs-xl: 1.5rem; //24
+$fs-2xl: 2rem; //32
+$fs-3xl: 2.75rem; //44
+$fs-4xl: 3.5rem; //56
+
+/* ===========================================================
+   FONT WEIGHT
+=========================================================== */
+
+$fw-light: 300;
+$fw-regular: 400;
+$fw-medium: 500;
+$fw-semibold: 600;
+$fw-bold: 700;
+
+/* ===========================================================
+   LINE HEIGHT
+=========================================================== */
+
+$lh-tight: 1.2;
+$lh-normal: 1.6;
+$lh-loose: 1.8;
 
 /* ==========================================================================
    COLORS
    ========================================================================== */
 
-$color-primary: #7cff00;
-$color-primary-hover: #96ff3d;
-$color-primary-dark: #4aa300;
+/* Background */
+$bg-primary: #0c1014;
+$bg-secondary: #12161a;
+$bg-tertiary: #171c21;
+$bg-surface: #1b2025;
+$bg-overlay: rgba(12, 16, 20, 0.85);
 
-$color-success: #00ff88;
-$color-warning: #ffc857;
-$color-danger: #ff4d4d;
-$color-info: #49c6ff;
+/* Cards */
+$card-bg: #181d22;
+$card-bg-hover: #20262c;
+$card-muted: #222930;
 
-// Background
-$bg-page: #090909;
-$bg-main: #0d0d0d;
-$bg-surface: #111111;
-$bg-card: #131313;
-$bg-card-hover: #191919;
-$bg-code: #101010;
+/* Borders */
+$border-primary: #2a3138;
+$border-secondary: #3c4543;
+$border-muted: #252b31;
 
-// Border
-$border-color: #262626;
-$border-hover: #3d3d3d;
-$border-active: $color-primary;
+/* Brand */
+$primary: #7c9c83;
+$primary-light: #adc1af;
+$primary-hover: #8bad91;
+$primary-dark: #33433b;
+$primary-darker: #28352f;
 
-// Text
-$text-primary: #eeeeee;
-$text-secondary: #b3b3b3;
-$text-muted: #777777;
-$text-disabled: #555555;
-$text-accent: $color-primary;
+/* Text */
+$text-primary: #e4e4e5;
+$text-secondary: #b6bab8;
+$text-muted: #969d9a;
+$text-disabled: #7b7d81;
+$text-placeholder: #666b70;
 
-/* Overlay */
-$overlay-dark: rgba(0, 0, 0, 0.55);
-$overlay-light: rgba(255, 255, 255, 0.05);
+/* Status */
+$success: #8cbf8d;
+$warning: #ad885a;
+$error: #cf6b6b;
+$info: #6c94c7;
 
+/* Neutral */
+$white: #ffffff;
+$black: #000000;
 
-// ==========================================================================
-// TYPOGRAPHY
-// ==========================================================================
-
-$font-mono: "JetBrains Mono", "Fira Code", monospace;
-$font-sans: "Inter", sans-serif;
-
-$font-size-xs: 12px;
-$font-size-sm: 14px;
-$font-size-md: 16px;
-$font-size-lg: 20px;
-$font-size-xl: 28px;
-$font-size-2xl: 40px;
-
-$line-height: 1.7;
-
-$font-weight-normal: 400;
-$font-weight-medium: 500;
-$font-weight-bold: 700;
+/* Misc */
+$shadow-color: rgba(0, 0, 0, 0.45);
+$overlay: rgba(0, 0, 0, 0.55);
 
 
-// ==========================================================================
-// LAYOUT
-// ==========================================================================
+/* ===========================================================
+   SHADOW
+=========================================================== */
 
-$container-width: 1400px;
+$shadow-sm: 0 2px 8px rgba(0,0,0,.25);
 
-$navbar-height: 72px;
+$shadow-md: 0 6px 18px rgba(0,0,0,.35);
 
-$content-gap: 32px;
-$section-gap: 48px;
+$shadow-lg: 0 12px 32px rgba(0,0,0,.45);
 
-$sidebar-width: 300px;
+/* ===========================================================
+   BORDER
+=========================================================== */
 
-$card-radius: 8px;
-$button-radius: 6px;
-$input-radius: 6px;
+$radius-sm: 8px;
+$radius-md: 12px;
+$radius-lg: 18px;
+$radius-xl: 24px;
 
-
-// ==========================================================================
-// SPACING
-// ==========================================================================
+/* ===========================================================
+   SPACING
+=========================================================== */
 
 $space-1: 4px;
 $space-2: 8px;
@@ -93,87 +122,97 @@ $space-8: 40px;
 $space-9: 48px;
 $space-10: 64px;
 
+/* ===========================================================
+   LAYOUT
+=========================================================== */
 
-// ==========================================================================
-// SHADOW
-// ==========================================================================
+$container: 1280px;
+$content: 1180px;
+$sidebar: 320px;
 
-$shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.2);
+/* ===========================================================
+   TRANSITION
+=========================================================== */
 
-$shadow-md: 0 8px 20px rgba(0, 0, 0, 0.35);
-
-$shadow-lg: 0 15px 40px rgba(0, 0, 0, 0.45);
-
-$shadow-glow: 0 0 10px rgba(124, 255, 0, 0.25);
-
-$shadow-glow-strong: 0 0 18px rgba(124, 255, 0, 0.45);
-
-
-// ==========================================================================
-// TRANSITIONS
-// ==========================================================================
-
-$transition-fast: 0.15s ease;
-$transition-normal: 0.25s ease;
-$transition-slow: 0.4s ease;
+$transition: .25s ease;
 
 
-// ==========================================================================
-// Z-INDEX
-// ==========================================================================
+/* ===========================================================
+   CSS THEME VARIABLES
+=========================================================== */
 
-$z-dropdown: 100;
-$z-sticky: 200;
-$z-fixed: 500;
-$z-modal-backdrop: 900;
-$z-modal: 1000;
-$z-tooltip: 1100;
+:root {
+   /* Background */
+   --bg-primary: #0c1014;
+   --bg-secondary: #12161a;
+   --bg-tertiary: #171c21;
 
+   /* Text */
+   --text-primary: #e4e4e5;
+   --text-secondary: #c0c0c0be;
+   --text-thridary: #5a8563;
 
-// ==========================================================================
-// GRID
-// ==========================================================================
+   /* Border */
+   --border-primary: #2a3138;
 
-$grid-gap: 24px;
+   /* Brand */
+   --primary: #5a8563;
 
+   color-scheme: dark;
 
-// ==========================================================================
-// COMPONENT
-// ==========================================================================
+   /* navbar animation */
+   --nav-hover: #5a8563;
 
-$post-image-width: 260px;
-$post-image-height: 140px;
+   // hero background
+   --hero-bg: #0c1014;
 
-$post-card-height: 160px;
+   // fingerprint icon
+   --fingerprint-icon: #7c9c83;
 
-$avatar-size: 140px;
+   // hero background gradient
+   --hero-bg-gradient: linear-gradient(
+      30deg,
+      transparent 0%,
+      rgba(250, 250, 250, 0.142) 0%,
+      #0c1014 60%
+   );
+}
 
-$tag-height: 34px;
+html.light {
+   --bg-primary: #ffffff;
+   --bg-secondary: #f6f6f6;
+   --bg-tertiary: #ececec;
 
-$button-height: 42px;
+   --text-primary: #1b1b1b;
+   --text-secondary: #262626;
+   --text-thridary: #007016;
 
-$input-height: 42px;
+   --border-primary: #dddddd;
 
+   --primary: #4b7c55;
 
-// ==========================================================================
-// EFFECTS
-// ==========================================================================
+   color-scheme: light;
 
-$grid-opacity: 0.05;
+   /* navbar animation */
+   --nav-hover: #4b7c55;
 
-$noise-opacity: 0.03;
+   // hero background
+   --hero-bg: #ffffff93;
 
-$scanline-opacity: 0.04;
+   // hero background gradient
+   --hero-bg-gradient: linear-gradient(
+      30deg,
+      transparent 0%,
+      rgba(255, 255, 255, 0.034) 0%,
+      #9b9b9ba3 60%
+   );
+}
 
-$blur-glass: 12px;
+// active theme
+html.light .navbar__theme-icon--moon {
+   display: none;
+}
 
-
-// ==========================================================================
-// BREAKPOINTS
-// ==========================================================================
-
-$mobile: 576px;
-$tablet: 768px;
-$laptop: 1024px;
-$desktop: 1280px;
-$wide: 1440px;
+html:not(.light) .navbar__theme-icon--sun {
+   display: none;
+}

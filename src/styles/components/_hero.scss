@@ -1,0 +1,113 @@
+@use '../abstracts/' as *;
+
+.hero {
+    width: 100%;
+    height: 450px;
+    position: relative;
+
+    &__container {
+        width: 100%;
+        height: 100%;
+        border-bottom: 1px solid var(--border-primary);
+
+        @include flex-layout(
+            $display: relative,
+        );
+    }
+
+    // BACKGROUND LAYER
+    &__media {
+        position: absolute;
+        z-index:-1;
+        inset: 0;
+        background-color: var(--hero-bg);
+    }
+
+    &__image {
+        transform: translateX(-10%);
+        width: 600px;
+        height: 100%;
+        object-fit: cover; // quan trọng nhất
+        filter: brightness(0.6); // làm tối để text nổi
+
+        color: red;
+    }
+
+    // CONTENT LAYER
+    &__content {
+        height: 100%;
+        width: 100%;
+        position: absolute;
+        z-index: 1;
+        @include flex-layout(
+            $display: flex,
+            $justify: center,
+        );
+        background: var(--hero-bg-gradient);
+    }
+
+    &__text {
+        max-width: 1300px;
+        @include flex-layout(
+            $display: flex,
+            $direction: column,
+            $align: flex-start,
+            $gap: $space-4,
+        );
+
+        a {
+            font-weight: $fw-bold;
+        }
+    }
+
+    &__brand {
+        color: var(--text-thridary);
+        font-size: $fs-xl;
+    }
+
+    &__title {
+        color: var(--text-primary);
+        font-weight: $fw-bold;
+    }
+
+    &__description {
+        color: var(--text-secondary);
+    }
+
+    &__cta {
+        border: 2px solid var(--text-primary);
+        padding: 10px 18px;
+        border-radius: 5px;
+        background: transparent;
+        color: var(--text-primary);
+        font-weight: $fw-bold;
+        cursor: pointer;
+
+        transition:
+            background-color .25s ease,
+            color .25s ease,
+            border-color .25s ease,
+            transform .2s ease,
+            box-shadow .25s ease;
+
+        &:hover {
+            background: #7c9c8319;
+            color: var(--text-primary);
+            border: 2px solid var(--text-primary);
+            transform: translateY(-2px);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, .12);
+        }
+
+        &:active {
+            transform: translateY(0);
+            box-shadow: 0 3px 8px rgba(0, 0, 0, .08);
+        }
+
+        &:focus-visible {
+            outline: 2px solid var(--primary);
+            outline-offset: 3px;
+        }
+    }
+
+
+}

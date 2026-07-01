@@ -1,0 +1,156 @@
+@use '../abstracts/' as *;
+
+.navbar {
+    width: 100%;
+    height: 90px;
+    display: flex;
+    background: var(--bg-primary);
+    border-bottom: 1px solid var(--border-primary);
+    transition: background-color $transition, border-color $transition;
+
+    // BRANDING
+    &__container {
+        width: 100%;
+        max-width: 1100px;
+        margin-inline: auto;
+
+        @include flex-layout(
+            $display: flex,
+            $justify: space-between
+        );
+    }
+
+    &__branding {
+        @include flex-layout(
+            $display: flex,
+            $justify: center,
+            $align: center,
+            $gap: $space-1
+        );
+    }
+
+    &__logo {
+        width: 60px;
+        height: 60px;
+
+        &-img {
+            width: 100%;
+            height: 100%;
+            display: block;
+        }
+    }
+
+    &__text {
+        @include flex-layout(
+            $display: flex,
+            $direction: column,
+            $justify: center,
+            $align: flex-start,
+            $gap: $space-1
+        );
+    }
+
+    &__name {
+        color: var(--text-primary);
+        font-size: $fs-2xl;
+        font-weight: $fw-semibold;
+        transition: color $transition;
+    }
+
+    &__tagline {
+        color: var(--text-thridary);
+        font-size: $fs-xs;
+        transition: color $transition;
+    }
+
+    // NAVIGATION
+    &__nav {
+        height: 100%;
+        width: 100%;
+        max-width: 500px;
+
+        @include flex-layout(
+            $display: flex,
+            $justify: space-between,
+            $align: center,
+            $gap: $space-2
+        );
+    }
+
+    &__link {
+        position: relative;
+        color: var(--text-primary);
+        text-decoration: none;
+        padding: 6px 0;
+        transition: color $transition;
+        width: 150px;
+        text-align: center;
+        font-weight: $fw-medium;
+
+        &:hover {
+            color: var(--nav-hover);
+        }
+
+        &::after {
+            content: "";
+            position: absolute;
+            left: 0;
+            bottom: -100%;
+            width: 100%;
+            height: 4px;
+            background: var(--primary);
+
+            transform: scaleX(0);
+            transform-origin: left;
+            transition: transform 0.25s ease;
+            opacity: 0.6;
+        }
+
+        &:hover::after {
+            transform: scaleX(1);
+        }
+
+        &.is-active {
+            color: var(--primary);
+
+            &::after {
+                transform: scaleX(1);
+                opacity: 1;
+            }
+        }
+    }
+
+    &__theme-toggle {
+        width: 42px;
+        height: 42px;
+        border: none;
+        border-radius: 50%;
+        background: transparent;
+        cursor: pointer;
+
+        @include flex-layout(
+            $display: flex,
+            $justify: center,
+            $align: center
+        );
+
+        transition:
+            background-color $transition,
+            transform .2s ease;
+
+        &:hover {
+            background: var(--bg-secondary);
+        }
+
+        &:active {
+            transform: scale(.92);
+        }
+    }
+
+    &__theme-icon {
+        width: 20px;
+        height: 20px;
+        color: var(--text-primary);
+        transition: color $transition;
+    }
+}

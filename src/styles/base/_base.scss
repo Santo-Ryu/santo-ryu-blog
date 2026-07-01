@@ -1,7 +1,7 @@
 @use '../abstracts/' as *;
 
 * {
-    @include font-base();
+    @include font-base($font-primary);
     font-variation-settings: "wdth" 100;
     margin: 0;
     padding: 0;
