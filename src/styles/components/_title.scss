@@ -1,0 +1,7 @@
+@use '../abstracts/' as *;
+
+.title-component {
+    font-weight: $fw-bold;
+    padding: 0 $space-2;
+    border-left: 4px solid var(--primary);
+}

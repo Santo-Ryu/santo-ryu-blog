@@ -1,0 +1,38 @@
+---
+import Tag from '../components/Tag.astro'
+---
+
+<article class="article-card">
+
+    <div class="article-card__image">
+        <img src="src/assets/index.png" alt="">
+    </div>
+
+    <div class="article-card__content">
+
+        <div class="article-card__meta">
+            <span>FILE SYSTEM FORENSICS</span>
+            <span>•</span>
+            <span>MAY 18, 2024</span>
+        </div>
+
+        <h3 class="article-card__title">
+            Ext4 Forensics: Unallocated Space Analysis
+        </h3>
+
+        <p class="article-card__desc">
+            Walkthrough of recovering and analyzing deleted files from
+            unallocated space in Ext4 file systems.
+        </p>
+
+        <div class="article-card__tag">
+            <Tag />
+        </div>
+
+    </div>
+
+    <div class="article-card__action">
+        <button>Read More →</button>
+    </div>
+
+</article>

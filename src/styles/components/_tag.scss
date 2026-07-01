@@ -1,0 +1,14 @@
+@use '../abstracts/' as *;
+
+.tag-component {
+    border: 1px solid var(--border-primary);
+    padding: $space-2;
+    border-radius: $radius-sm;
+    background-color: var(--bg-primary);
+    
+    a {
+        color: var(--text-primary);
+        font-size: $fs-xs;
+    }
+}
+

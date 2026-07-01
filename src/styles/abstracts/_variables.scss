@@ -174,8 +174,21 @@ $transition: .25s ease;
       30deg,
       transparent 0%,
       rgba(250, 250, 250, 0.142) 0%,
-      #0c1014 60%
+      #0c1014 80%
    );
+
+   // Border colors
+   --border-primary: #2a3138;
+   --border-secondary: #3c4543;
+   --border-muted: #252b31;
+
+   // Icon
+   --icon: white;
+   --icon-hover: rgba(255, 255, 255, 0.075);
+
+   // Button
+   --bg-button: #0c1014;
+   --bg-button-hover: #5a8563;
 }
 
 html.light {
@@ -204,8 +217,16 @@ html.light {
       30deg,
       transparent 0%,
       rgba(255, 255, 255, 0.034) 0%,
-      #9b9b9ba3 60%
+      #4b7c55 80%
    );
+
+   // Icon
+   --icon: black;
+   --icon-hover: #3f3f3f13;
+
+   // Button
+   --bg-button:  #ffffff;
+   --bg-button-hover: #4b7c55; 
 }
 
 // active theme

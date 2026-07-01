@@ -1,6 +1,8 @@
 ---
 import Navbar from '../components/Navbar.astro';
 import Hero from '../components/Hero.astro';
+import BlogContent from '../components/BlogContent.astro';
+import Footer from '../components/Footer.astro';
 ---
 
 <!doctype html>
@@ -15,7 +17,8 @@ import Hero from '../components/Hero.astro';
 		<Navbar />
 		<Hero />
 		<main>
-			<slot />
+			<BlogContent />
 		</main>
+		<Footer />
 	</body>
 </html>

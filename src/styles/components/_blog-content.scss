@@ -1,0 +1,168 @@
+@use '../abstracts/' as *;
+
+.main-layout {
+    width: 100%;
+    height: auto;
+    @include flex-layout(
+        $display: flex,
+        $align: center,
+    );
+    background-color: var(--bg-primary);
+
+    &__container {
+        max-width: 1100px;
+        padding: $space-7 0;
+        @include flex-layout(
+            $display: flex,
+            $direction: row,
+            $align: stretch,
+            $gap: $space-4
+        );
+    }
+
+    &__articles {
+        flex: 1;
+        @include flex-layout(
+            $display: flex,
+            $direction: column,
+            $align: flex-start,
+            $gap: $space-4,
+        );
+    }
+
+    &__title {
+        font-weight: $fw-bold;
+        padding: 0 $space-2;
+        border-left: 4px solid var(--primary);
+    }
+
+
+    &__sidebar {
+        width: 300px;
+        flex-shrink: 0; 
+        @include flex-layout(
+            $direction: column,
+            $gap: $space-4,
+            $justify: start
+        );
+    }
+}
+
+.articles {
+    @include flex-layout(
+        $display: flex,
+        $direction: column,
+        $align: flex-start,
+        $gap: $space-3,
+    );
+
+    &__footer {
+        width: 100%;
+        @include flex-layout(
+            $align: center
+        );
+
+        a {
+            color: var(--text-primary);
+        }
+    }
+}
+
+.sidebar-card {
+    width: 100%;
+    @include flex-layout(
+        $display: flex,
+        $direction: column,
+        $align: flex-start,
+        $gap: $space-4,
+    );
+}
+
+.about-blog {
+    @include flex-layout(
+        $gap: $space-3
+    );
+
+    &__icon {
+        border: 1px solid var(--border-primary);
+        border-radius: $radius-sm;
+        background-color: var(--bg-secondary);
+        padding: $space-1;
+        @include flex-layout();
+        
+        svg {
+            width: 50px;
+            height: 50px;
+        }
+    }
+
+    &__desc {
+        font-size: $fs-xs;
+    }
+}
+
+
+.subscribe-form {
+    width: 100%;
+    @include flex-layout(
+        $gap: $space-3
+    );
+
+    input {
+        width: 100%;
+        padding: 10px;
+        border-radius: $radius-sm;
+        border: 1px solid var(--border-primary);
+        background-color: var(--bg-secondary);
+    }
+
+    button {
+        padding: 10px;
+        border-radius: $radius-sm;
+        background-color: rgb(0, 151, 0);
+        color: white;
+        font-weight: $fw-bold;
+
+        &:hover {
+            color: yellow;
+        }
+    }
+}
+
+.connect {
+    @include flex-layout(
+        $direction: column,
+        $align: left,
+        $gap: $space-4
+    );
+    width: 100%;
+}
+
+.socials {
+    width: 100%;
+    @include flex-layout(
+        $direction: row,
+        $justify: start,
+        $gap: $space-2
+    );
+
+    a {
+        width: 35px;
+        height: 35px;
+        border-radius: $radius-sm;
+        @include flex-layout();
+        border: 1px solid var(--border-primary);
+
+        &:hover {
+            background-color: var(--icon-hover);
+        }
+
+        svg {
+            font-size: $fs-lg;
+            color: var(--icon);
+        }
+    }
+}
+
+
+

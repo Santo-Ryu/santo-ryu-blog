@@ -24,7 +24,7 @@
     }
 
     &__image {
-        transform: translateX(-10%);
+        transform: translateX(-15%);
         width: 600px;
         height: 100%;
         object-fit: cover; // quan trọng nhất
@@ -47,7 +47,7 @@
     }
 
     &__text {
-        max-width: 1300px;
+        max-width: 550px;
         @include flex-layout(
             $display: flex,
             $direction: column,

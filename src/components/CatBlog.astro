@@ -1,0 +1,49 @@
+---
+import { Icon } from "astro-icon/components";
+
+const categories = [
+    {
+        name: "File System Forensics",
+        count: 12,
+        icon: "lucide:folder-search",
+    },
+    {
+        name: "Malware Analysis",
+        count: 9,
+        icon: "lucide:bug",
+    },
+    {
+        name: "Incident Response",
+        count: 8,
+        icon: "lucide:shield-alert",
+    },
+    {
+        name: "Timeline Analysis",
+        count: 7,
+        icon: "lucide:history",
+    },
+    {
+        name: "Tools & Scripts",
+        count: 6,
+        icon: "lucide:wrench",
+    }
+];
+---
+
+<ul class="category-list">
+    {categories.map((category) => (
+        <li class="category-list__item">
+            <div class="category-list__left">
+                <Icon
+                    name={category.icon}
+                    class="category-list__icon"
+                />
+                <span>{category.name}</span>
+            </div>
+
+            <span class="category-list__count">
+                {category.count}
+            </span>
+        </li>
+    ))}
+</ul>

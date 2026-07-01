@@ -1,0 +1,130 @@
+---
+import PostCard from '../components/PostCard.astro';
+import CatBlog from '../components/CatBlog.astro';
+import TitleComponent from '../components/Title.astro';
+import { Icon } from "astro-icon/components";
+
+
+const socials = [
+    {
+        icon: "lucide:github",
+        href: "https://github.com/yourname"
+    },
+    {
+        icon: "lucide:twitter",
+        href: "https://twitter.com/yourname"
+    },
+    {
+        icon: "lucide:mail",
+        href: "mailto:you@example.com"
+    },
+    {
+        icon: "lucide:rss",
+        href: "/rss.xml"
+    }
+];
+---
+
+<section class="main-layout">
+
+    <section class="main-layout__container">
+
+        <!-- LEFT -->
+        <section class="main-layout__articles">
+
+            <TitleComponent title="Latest Articles" />
+
+            <div class="articles">
+
+                <PostCard />
+                <PostCard />
+                <PostCard />
+
+            </div>
+
+            <div class="articles__footer">
+                <a href="#">
+                    View All Articles →
+                </a>
+            </div>
+
+        </section>
+
+        <!-- RIGHT -->
+        <aside class="main-layout__sidebar">
+
+            <section class="sidebar-card">
+
+                <TitleComponent title="About This Blog" />
+
+                <div class="about-blog">
+
+                    <div class="about-blog__icon">
+                        <Icon name="lucide:fingerprint" />
+                    </div>
+
+                    <p class="about-blog__desc">
+                        Digital Evidence is a blog focused on digital forensics,
+                        incident response, malware analysis, and investigation.
+                    </p>
+
+                </div>
+
+            </section>
+
+            <section class="sidebar-card">
+
+                <TitleComponent title="Categories" />
+
+                <CatBlog />
+
+            </section>
+
+            <section class="sidebar-card">
+
+                <TitleComponent title="Stay Updated" />
+
+                <p>
+                    Get notified when new articles are published.
+                </p>
+
+                <form class="subscribe-form">
+
+                    <input
+                        type="email"
+                        placeholder="you@example.com">
+
+                    <button>
+                        Subscribe
+                    </button>
+
+                </form>
+
+                <div class="connect">
+
+                    <TitleComponent title="Connect" />
+
+                    <div class="socials">
+
+                        {socials.map((social) => (
+                            <a
+                                href={social.href}
+                                aria-label={social.icon}
+                        >
+                                <Icon
+                                    name={social.icon}
+                                />
+                            </a>
+                        ))}
+
+                    </div>
+                </div>
+
+            </section>
+
+        </aside>
+
+    </section>
+
+</section>
+
